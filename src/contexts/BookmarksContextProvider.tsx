@@ -5,7 +5,7 @@ import { JobItemExpanded } from "../lib/types";
 type BookmarksContext = {
   bookmarkedIds: number[];
   handleToggleBookmark: (id: number) => void;
-  bookmarkedJobItems: JobItemExpanded[];
+  bookmarkedJobItems: JobItemExpanded[] | undefined;
   isLoading: boolean;
 };
 
