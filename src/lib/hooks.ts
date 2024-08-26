@@ -131,7 +131,8 @@ export const useDebounce = <T>(value: T, delay = 500): T => {
 export function useLocalStorage<T>(
   key: string,
   initialValue: T
-): [T, React.Dispatch<React.SetStateAction<T>>] {
+): readonly [T, React.Dispatch<React.SetStateAction<T>>] {
+  // Change to readonly
   const [value, setValue] = useState<T>(() =>
     JSON.parse(localStorage.getItem(key) || JSON.stringify(initialValue))
   );
